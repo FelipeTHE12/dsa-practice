@@ -1,0 +1,19 @@
+{
+  "name": "dsa-practice",
+  "version": "1.0.0",
+  "description": "Repository for learning alrogithms and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@vitest/ui": "^3.0.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.2"
+  }
+}
