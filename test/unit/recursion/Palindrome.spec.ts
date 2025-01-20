@@ -9,7 +9,6 @@ describe("Palindrome testing", () => {
 
   it("should return false when word is not empty", () => {
     const result = Palindrome("awesome");
-    console.log("result", result);
     expect(result).toBe(false);
   });
 
