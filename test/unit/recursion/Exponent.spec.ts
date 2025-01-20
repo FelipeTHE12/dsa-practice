@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { myCustomMathPow } from "../../../src/recursion/Exponent";
 
-describe("Exponent Testing", () => {
+describe("Exponent", () => {
   it("should return 1 when exponent is 0", () => {
     const result = myCustomMathPow(2, 0);
     expect(result).toBe(1);

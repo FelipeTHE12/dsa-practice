@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { productOfArray } from "../../../src/recursion/ProductOfArray";
 
-describe("Product of array testing", () => {
+describe("ProductOfArray", () => {
   it("should return 1 when array is empty", () => {
     const result = productOfArray([]);
     expect(result).toBe(1);

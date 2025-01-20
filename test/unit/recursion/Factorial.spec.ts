@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { factorial } from "../../../src/recursion/Factorial";
 import { fibonacci } from "../../../src/recursion/Fibonacci";
 
-describe("Fibonacci function", () => {
+describe("Fibonacci", () => {
   it("should return 1 when number is 1", () => {
     const result = fibonacci(1);
     expect(result).toBe(1);

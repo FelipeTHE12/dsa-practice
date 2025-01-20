@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { Palindrome } from "../../../src/recursion/Palindrome";
 
-describe("Palindrome testing", () => {
+describe("Palindrome", () => {
   it("should return '' when word is empty", () => {
     const result = Palindrome("");
     expect(result).toEqual("");

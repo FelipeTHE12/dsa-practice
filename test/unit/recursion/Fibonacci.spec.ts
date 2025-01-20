@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { fibonacci } from "../../../src/recursion/Fibonacci";
 
-describe("Fibonacci testing", () => {
+describe("Fibonacci", () => {
   it("should return 0 when number is 0", () => {
     const result = fibonacci(0);
     expect(result).toBe(0);
