@@ -6,6 +6,6 @@ export function myCustomMathPow(base: number, exponent: number): number {
   return base * myCustomMathPow(base, exponent - 1);
 }
 
-console.log(myCustomMathPow(2, 0)); // 1
-console.log(myCustomMathPow(2, 2)); // 4
-console.log(myCustomMathPow(2, 4)); // 16
+// console.log(myCustomMathPow(2, 0)); // 1
+// console.log(myCustomMathPow(2, 2)); // 4
+// console.log(myCustomMathPow(2, 4)); // 16

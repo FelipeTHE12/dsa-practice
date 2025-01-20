@@ -11,8 +11,8 @@ export function Palindrome(word: string): Boolean | string {
   );
 }
 
-console.log(Palindrome("awesome")); // false
-console.log(Palindrome("foobar")); // false
-console.log(Palindrome("tacocat")); // true
-console.log(Palindrome("amanaplanacanalpanama")); // true
-console.log(Palindrome("amanaplanacanalpandemonium")); // false
+// console.log(Palindrome("awesome")); // false
+// console.log(Palindrome("foobar")); // false
+// console.log(Palindrome("tacocat")); // true
+// console.log(Palindrome("amanaplanacanalpanama")); // true
+// console.log(Palindrome("amanaplanacanalpandemonium")); // false
