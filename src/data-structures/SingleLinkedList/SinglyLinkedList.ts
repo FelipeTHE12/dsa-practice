@@ -8,7 +8,7 @@ class LinkedListNode<T> {
     }
 }
 
-class SinglyLinkedList<T> {
+export class SinglyLinkedList<T> {
     head: LinkedListNode<T> | null = null;
     tail: LinkedListNode<T> | null = null;
     private length: number = 0
