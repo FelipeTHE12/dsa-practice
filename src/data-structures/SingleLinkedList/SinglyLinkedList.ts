@@ -29,4 +29,22 @@ export class SinglyLinkedList<T> {
     size(): number {
         return this.length;
     }
+
+    pop(): void {
+        if (!this.head) return;
+        let current = this.head;
+        let newTail = current;
+        while (current.next) {
+            newTail = current;
+            current = current.next;
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+
+        if (this.size() === 0) {
+            this.tail = null;
+            this.head = null;
+        }
+    }
 }
