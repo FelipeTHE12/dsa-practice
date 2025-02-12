@@ -42,9 +42,11 @@ export class SinglyLinkedList<T> {
         this.tail.next = null;
         this.length--;
 
-        if (this.size() === 0) {
-            this.tail = null;
-            this.head = null;
-        }
+        if (this.size() === 0) this.resetHeadAndTail()
+    }
+
+    private resetHeadAndTail() {
+        this.tail = null;
+        this.head = null;
     }
 }
