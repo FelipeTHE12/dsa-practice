@@ -29,4 +29,28 @@ describe('SingleLinkedList', () => {
             expect(linkedList.size()).toStrictEqual(1);
         })
     })
+
+    describe('pop', () => {
+        it('When i have a list with 5 values, should remove the last and decrease lenght', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.add(2);
+            linkedList.add(3);
+            linkedList.add(4);
+            linkedList.add(5);
+            linkedList.pop();
+            expect(linkedList.tail?.val).toStrictEqual(4);
+            expect(linkedList.tail?.next).toStrictEqual(null);
+            expect(linkedList.size()).toStrictEqual(4);
+        })
+
+        it('When pop is called with only one node, should reset both head and tail, also lenght should be 0', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.pop();
+            expect(linkedList.tail).toStrictEqual(null);
+            expect(linkedList.head).toStrictEqual(null);
+            expect(linkedList.size()).toStrictEqual(0)
+        })
+    })
 })
