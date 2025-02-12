@@ -3,7 +3,7 @@ import { SinglyLinkedList } from "../../../../src/data-structures/SingleLinkedLi
 
 
 describe('SingleLinkedList', () => {
-    describe('Add', () => {
+    describe('add', () => {
         it('Should add the value to the head and tail when its empty', () => {
             const linkedList = new SinglyLinkedList<number>();
             expect(linkedList.head).toStrictEqual(null);
@@ -21,7 +21,7 @@ describe('SingleLinkedList', () => {
         })
     })
 
-    describe('Size', () => {
+    describe('size', () => {
         it('Should return 0 when just created and 1 after Add has been called with', () => {
             const linkedList = new SinglyLinkedList<number>();
             expect(linkedList.size()).toStrictEqual(0);
