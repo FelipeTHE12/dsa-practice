@@ -65,4 +65,17 @@ describe('SingleLinkedList', () => {
             expect(linkedList.size()).toStrictEqual(1);
         })
     })
+
+
+    describe('unShift', () => {
+        it('Should add value to the head of the list and increase size', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.add(2);
+            linkedList.unShift(3);
+            expect(linkedList.head?.val).toStrictEqual(3);
+            expect(linkedList.head?.next?.val).toStrictEqual(1);
+            expect(linkedList.size()).toStrictEqual(3);
+        })
+    })
 })

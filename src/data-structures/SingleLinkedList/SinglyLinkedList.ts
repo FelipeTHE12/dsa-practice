@@ -58,6 +58,19 @@ export class SinglyLinkedList<T> {
         }
     }
 
+    unShift(value: T): void {
+        const newNode = new LinkedListNode(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            const currentHead = this.head
+            this.head = newNode
+            this.head.next = currentHead;
+            this.increaseLenght();
+        }
+    }
+
     private resetHeadAndTail() {
         this.tail = null;
         this.head = null;
