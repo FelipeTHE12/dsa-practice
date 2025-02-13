@@ -111,4 +111,24 @@ describe('SingleLinkedList', () => {
             expect(linkedList.getFromIndex(2)).toStrictEqual(30);
         })
     })
+
+    describe('insert', () => {
+        it('If the list is empty should insert new node and assign it to the head', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.insert(0, 20);
+            expect(linkedList.head?.val).toStrictEqual(20)
+        })
+
+        it('should add a new node on the index given and the altered node should be on the next position', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.add(15);
+            linkedList.insert(1, 20);
+            expect(linkedList.getFromIndex(0)).toStrictEqual(5);
+            expect(linkedList.getFromIndex(1)).toStrictEqual(20);
+            expect(linkedList.getFromIndex(2)).toStrictEqual(10);
+            expect(linkedList.getFromIndex(3)).toStrictEqual(15);
+        })
+    })
 })

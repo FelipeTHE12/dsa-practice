@@ -78,7 +78,7 @@ export class SinglyLinkedList<T> {
 
         let currentNode: LinkedListNode<T> = this.head!;
         let count = 0;
-        while (count <= index) {
+        while (count < index) {
             if (currentNode.next) currentNode = currentNode.next;
             count++;
         }
@@ -99,6 +99,32 @@ export class SinglyLinkedList<T> {
         }
 
         currentNode.val = newValue;
+    }
+
+    insert(index: number, newValue: T): void {
+        if (index < 0 || index > this.size()) {
+            return
+        }
+
+        if (this.size() === 0) this.unShift(newValue);
+
+        if (index === this.size()) this.add(newValue);
+
+        const newNode = new LinkedListNode(newValue);
+
+        let counter = 0;
+        let currentNode = this.head;
+        let previusNode = currentNode;
+
+        while (counter < index) {
+            previusNode = currentNode;
+            currentNode = currentNode?.next || null;
+            counter++;
+        }
+
+        previusNode!.next = newNode;
+        newNode.next = currentNode;
+        this.increaseLenght();
     }
 
     private resetHeadAndTail() {
