@@ -50,7 +50,19 @@ describe('SingleLinkedList', () => {
             linkedList.pop();
             expect(linkedList.tail).toStrictEqual(null);
             expect(linkedList.head).toStrictEqual(null);
-            expect(linkedList.size()).toStrictEqual(0)
+            expect(linkedList.size()).toStrictEqual(0);
+        })
+    })
+
+    describe('shif', () => {
+        it('Should remove the head of the list and decrease size', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.add(2);
+            linkedList.shift();
+            expect(linkedList.head?.val).toStrictEqual(2);
+            expect(linkedList.head?.next).toStrictEqual(null);
+            expect(linkedList.size()).toStrictEqual(1);
         })
     })
 })

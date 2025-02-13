@@ -40,13 +40,34 @@ export class SinglyLinkedList<T> {
         }
         this.tail = newTail;
         this.tail.next = null;
-        this.length--;
+        this.decreaseLength();
 
         if (this.size() === 0) this.resetHeadAndTail()
+    }
+
+    shift(): void {
+        if (!this.head) return;
+        const currentHead = this.head.next
+        this.head = null;
+        this.head = currentHead;
+        this.decreaseLength();
+
+        if (this.size() === 0) {
+            this.tail = null;
+            this.tail
+        }
     }
 
     private resetHeadAndTail() {
         this.tail = null;
         this.head = null;
+    }
+
+    private decreaseLength(): void {
+        this.length--;
+    }
+
+    private increaseLenght(): void {
+        this.length++;
     }
 }
