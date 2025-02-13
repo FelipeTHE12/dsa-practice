@@ -78,4 +78,24 @@ describe('SingleLinkedList', () => {
             expect(linkedList.size()).toStrictEqual(3);
         })
     })
+
+    describe('getFromIndex', () => {
+        it('If the given index is below 0 should return null', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            expect(linkedList.getFromIndex(-1)).toStrictEqual(null);
+        })
+
+        it('If the given index is greather than the size should return null', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            expect(linkedList.getFromIndex(2)).toStrictEqual(null);
+        })
+
+        it('Should return the value on the specified index', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.add(20);
+            expect(linkedList.getFromIndex(2)).toStrictEqual(20);
+        })
+    })
 })
