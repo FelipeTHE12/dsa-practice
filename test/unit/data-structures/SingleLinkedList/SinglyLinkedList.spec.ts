@@ -88,14 +88,27 @@ describe('SingleLinkedList', () => {
         it('If the given index is greather than the size should return null', () => {
             const linkedList = new SinglyLinkedList<number>();
             linkedList.add(1);
+            linkedList.add(10);
             expect(linkedList.getFromIndex(2)).toStrictEqual(null);
         })
 
         it('Should return the value on the specified index', () => {
             const linkedList = new SinglyLinkedList<number>();
             linkedList.add(1);
+            linkedList.add(7);
             linkedList.add(20);
             expect(linkedList.getFromIndex(2)).toStrictEqual(20);
+        })
+    })
+
+    describe('set', () => {
+        it('Should alter the node of the current index with the given value', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(1);
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.set(2, 30);
+            expect(linkedList.getFromIndex(2)).toStrictEqual(30);
         })
     })
 })
