@@ -169,4 +169,17 @@ describe('SingleLinkedList', () => {
             expect(linkedList.size()).toStrictEqual(2);
         })
     })
+
+    describe('reverse', () => {
+        it('Should reverse the nodes in the list', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.add(25)
+            linkedList.reverse()
+            expect(linkedList.getFromIndex(0)).toStrictEqual(25)
+            expect(linkedList.getFromIndex(1)).toStrictEqual(10)
+            expect(linkedList.getFromIndex(2)).toStrictEqual(5)
+        })
+    })
 })
