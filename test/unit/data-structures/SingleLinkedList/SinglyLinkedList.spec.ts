@@ -129,6 +129,44 @@ describe('SingleLinkedList', () => {
             expect(linkedList.getFromIndex(1)).toStrictEqual(20);
             expect(linkedList.getFromIndex(2)).toStrictEqual(10);
             expect(linkedList.getFromIndex(3)).toStrictEqual(15);
+            expect(linkedList.size()).toStrictEqual(4);
+        })
+    })
+
+    describe('removeWithIndex', () => {
+        it('Should remove the node that is on the position of index', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.removeWithIndex(1);
+            expect(linkedList.head?.next).toStrictEqual(null);
+            expect(linkedList.getFromIndex(1)).toStrictEqual(null);
+            expect(linkedList.size()).toStrictEqual(1);
+        })
+
+        it('When the head is removed it should be null', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.removeWithIndex(0);
+            expect(linkedList.head).toStrictEqual(null);
+            expect(linkedList.size()).toStrictEqual(0);
+        })
+
+        it('When the last item is removed the tail should be reassigned', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.add(15);
+            linkedList.removeWithIndex(2)
+            expect(linkedList.tail?.val).toStrictEqual(10);
+        })
+
+        it('When a index greather than the size is given it should do nothing', () => {
+            const linkedList = new SinglyLinkedList<number>();
+            linkedList.add(5);
+            linkedList.add(10);
+            linkedList.removeWithIndex(2)
+            expect(linkedList.size()).toStrictEqual(2);
         })
     })
 })

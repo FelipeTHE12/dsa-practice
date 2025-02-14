@@ -127,6 +127,32 @@ export class SinglyLinkedList<T> {
         this.increaseLenght();
     }
 
+    removeWithIndex(index: number) {
+        if (index < 0 || index > this.size() - 1) {
+            return
+        }
+
+        let counter = 0;
+        let currentNode = this.head;
+        let previusNode = currentNode;
+
+        while (counter < index) {
+            previusNode = currentNode;
+            currentNode = currentNode?.next || null;
+            counter++;
+        }
+
+        previusNode!.next = currentNode?.next || null;
+        this.tail = previusNode;
+        this.decreaseLength();
+
+        if (this.size() === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+    }
+
+
     private resetHeadAndTail() {
         this.tail = null;
         this.head = null;
