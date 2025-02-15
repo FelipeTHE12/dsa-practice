@@ -27,6 +27,35 @@ describe('DoublyLinkedList', () => {
         });
     });
 
+    describe('pop', () => {
+        it('Should remove the last node of the item', () => {
+            const list = new DoublyLinkedList<number>();
+            list.add(5);
+            list.add(10);
+            list.add(15)
+            list.pop();
+            expect(list.head?.next?.val).toStrictEqual(10);
+            expect(list.tail?.val).toStrictEqual(10);
+        })
+
+        it('Should decrease the length of the list when popped', () => {
+            const list = new DoublyLinkedList<number>();
+            list.add(5);
+            list.add(10);
+            expect(list.size()).toStrictEqual(2);
+            list.pop();
+            expect(list.size()).toStrictEqual(1);
+        })
+
+        it('When the list become empty head and tail should be null', () => {
+            const list = new DoublyLinkedList<number>();
+            list.add(5);
+            list.pop();
+            expect(list.head).toStrictEqual(null);
+            expect(list.tail).toStrictEqual(null);
+        })
+    })
+
     describe('size', () => {
         it('Should return the length of the list', () => {
             const list = new DoublyLinkedList<number>();

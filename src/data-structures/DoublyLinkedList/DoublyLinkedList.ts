@@ -29,6 +29,21 @@ export class DoublyLinkedList<T> {
         this.length++;
     }
 
+    pop(): void {
+        if (this.size() === 0) return;
+
+        if (this.size() === 1) {
+            this.head = null;
+            this.tail = null;
+            return
+        }
+
+        const previousNode = this.tail!.previous;
+        if (previousNode) previousNode.next = null;
+        this.tail = previousNode;
+        this.length--;
+    }
+
     size(): number {
         return this.length;
     }
